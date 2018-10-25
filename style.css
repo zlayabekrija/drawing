@@ -1,0 +1,22 @@
+body{
+	margin:auto;
+	position: relative;
+	text-align: center;
+}
+nav{
+	margin: auto;
+	position: relative;
+	width: 100%;
+	height: 4em;
+
+}
+
+#frame{
+	display: grid;
+	position: absolute;
+	border: 2px solid red;
+	width: 70vh;
+	height: 70vh;
+	background-color: aqua;
+	left: 25%;
+}
