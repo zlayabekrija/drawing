@@ -1,6 +1,6 @@
-function color() {
+function color(x) {
 	let colors = ['red', 'green', 'blue', 'gray'];
-	document.getElementById('frame').style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+	x.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 }
 function blocks() {
 	let number = prompt('Number of squares');
@@ -10,6 +10,8 @@ function blocks() {
 	for(let j = 0; j <number; j++){columns+='auto ';}
 	for (let i = 0; i <number*number; i++) {
 		let square = document.createElement('div');
+		square.classList.add('paint'+i);
+		square.setAttribute('onmouseover','color(this)');
 	square.style.backgroundColor = 'white';
 	square.style.margin='auto';
 	square.style.height = '100%';
