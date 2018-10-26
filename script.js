@@ -1,11 +1,15 @@
 // x uses power of "this" keyword to retrive current element
 function color(x) {
-	let colors = ['red', 'green', 'blue', 'gray'];
-	x.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+	let red = Math.floor(Math.random() * 255);
+	let green = Math.floor(Math.random() * 255);
+	let blue = Math.floor(Math.random() * 255);
+	let alpha = Math.random().toFixed(2);
+	x.style.backgroundColor = `rgba(${red},${green},${blue},${alpha})`;
+
 }
 
 
-
+// function that makes grids when invoked
 function blocks() {
 	let frame = document.getElementById('frame');
 
@@ -42,10 +46,10 @@ function blocks() {
 
 
 }
-
+//resets the grid bringing everything to white
+//variable bricks is taking every item from grid an reseting it to white
 function white() {
-	//resets the grid bringing everything to white
-	//variable bricks is taking every item from grid an reseting it to white
+
 	let bricks = document.querySelectorAll("[class^=paint]");
 	for (let n = 0; n < bricks.length; n++) {
 		bricks[n].style.backgroundColor = 'white';
@@ -53,30 +57,33 @@ function white() {
 
 
 }
-
+//setting sqare to onmouseover function to function mono
 function black() {
 	let getDivs = document.querySelectorAll("[class^=paint]");
+	document.getElementById("frame").style.cursor = "url('http://www.rw-designer.com/cursor-extern.php?id=53662'),default";
 	for (let m = 0; m < getDivs.length; m++) {
 		getDivs[m].setAttribute('onmouseover', 'mono(this)');
 	}
 
 }
-
+//changing active square color to black
 function mono(f) {
 	f.style.backgroundColor = 'black';
+
 }
 
 function rainbow() {
 	let divs = document.querySelectorAll("[class^=paint]");
+	document.getElementById("frame").style.cursor = "url('http://www.rw-designer.com/cursor-extern.php?id=67869'),default";
 	for (let z = 0; z < divs.length; z++) {
 		divs[z].setAttribute('onmouseover', 'color(this)');
 	}
 }
 
 function erase() {
-	
+
 	let setDivs = document.querySelectorAll("[class^=paint]");
-	
+	document.getElementById("frame").style.cursor = "url('http://www.rw-designer.com/cursor-extern.php?id=72976'),default";
 	for (let a = 0; a < setDivs.length; a++) {
 		setDivs[a].setAttribute('onmouseover', 'simple(this)');
 	}
@@ -84,4 +91,5 @@ function erase() {
 
 function simple(b) {
 	b.style.backgroundColor = 'white';
+
 }
