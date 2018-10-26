@@ -71,7 +71,7 @@ function mono(f) {
 	f.style.backgroundColor = 'black';
 
 }
-
+//function that changes back to random colors if any
 function rainbow() {
 	let divs = document.querySelectorAll("[class^=paint]");
 	document.getElementById("frame").style.cursor = "url('http://www.rw-designer.com/cursor-extern.php?id=67869'),default";
@@ -79,16 +79,15 @@ function rainbow() {
 		divs[z].setAttribute('onmouseover', 'color(this)');
 	}
 }
-
+//function that adds onmouseover event to squares
 function erase() {
-
 	let setDivs = document.querySelectorAll("[class^=paint]");
 	document.getElementById("frame").style.cursor = "url('http://www.rw-designer.com/cursor-extern.php?id=72976'),default";
 	for (let a = 0; a < setDivs.length; a++) {
 		setDivs[a].setAttribute('onmouseover', 'simple(this)');
 	}
 }
-
+//function that resets all blocks to white
 function simple(b) {
 	b.style.backgroundColor = 'white';
 
